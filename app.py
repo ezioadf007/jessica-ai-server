@@ -1,4 +1,3 @@
-import os
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from openai import OpenAI
@@ -6,8 +5,7 @@ from openai import OpenAI
 app = Flask(__name__)
 CORS(app)
 
-# استفاده از متغیر محیطی برای کلید API
-client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
+client = OpenAI(api_key="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")
 
 @app.route("/chat", methods=["POST"])
 def chat():
