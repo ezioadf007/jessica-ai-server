@@ -11,7 +11,6 @@ client = OpenAI(api_key="sk-proj-gV_gdWLK6k4GDpCq1XgX0OtkVnb5a0HoXEnX5IZOJGb6J68
 def chat():
     try:
         data = request.get_json()
-
         if not data or "message" not in data:
             return jsonify({"error": "Missing 'message' in request"}), 400
 
@@ -27,6 +26,5 @@ def chat():
 
         reply = response.choices[0].message.content
         return jsonify({"reply": reply})
-
     except Exception as e:
         return jsonify({"error": str(e)}), 500
