@@ -5,7 +5,7 @@ from openai import OpenAI
 app = Flask(__name__)
 CORS(app)
 
-client = OpenAI(api_key="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")
+client = OpenAI(api_key="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")
 
 @app.route("/chat", methods=["POST"])
 def chat():
